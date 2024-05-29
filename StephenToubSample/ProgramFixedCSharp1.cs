@@ -1,51 +1,30 @@
-﻿namespace StephenToubSample
-{
-    internal class ProgramFixedCSharp1
-    {
-        private sealed class DisplayClass
-        {
-            public int num;
+﻿//namespace StephenToubSample
+//{
+//    internal class ProgramFixedCSharp1
+//    {
+//        private sealed class DisplayClass
+//        {
+//            public int i;
 
-            internal void Main(object p)
-            {
-                Console.WriteLine("Inside Main of DisplayClass");
+//            internal void Main(object p)
+//            {
+//                Console.WriteLine(i);
+//                Thread.Sleep(1000);
+//            }
+//        }
+//        private static void Main(string[] args)
+//        {
+//            for (int i = 0; i < 1000; i++)
+//            {
+//                DisplayClass displayC = new DisplayClass();
+//                displayC.i = i;
 
-                Console.WriteLine("Writing num");
-                Console.WriteLine(num);
-                Console.WriteLine("Wrote num");
+//                ThreadPool.QueueUserWorkItem(new WaitCallback(displayC.Main));
+//            }
 
-                Console.WriteLine("Sleeping");
-                Thread.Sleep(1000);
-                Console.WriteLine("Slept");
+//            Console.WriteLine("Exiting Main");
 
-                Console.WriteLine("Exiting Main of DisplayClass");
-            }
-        }
-        private static void Main(string[] args)
-        {
-            Console.WriteLine("Entered Main");
-
-
-            for (int i = 0; i < 1000; i++)
-            {
-                Console.WriteLine("Entered Loop " + i);
-
-                Console.WriteLine("Instantiating DisplayClass");
-                DisplayClass displayC = new DisplayClass();
-                Console.WriteLine("Instantiated DisplayClass");
-
-                Console.WriteLine("Setting num");
-                displayC.num = i;
-                Console.WriteLine("Set num");
-
-                Console.WriteLine("Queueing WorkItem");
-                ThreadPool.QueueUserWorkItem(new WaitCallback(displayC.Main));
-                Console.WriteLine("Queued WorkItem");
-            }
-
-            Console.WriteLine("Exiting Main");
-
-            Console.ReadLine();
-        }
-    }
-}
+//            Console.ReadLine();
+//        }
+//    }
+//}
